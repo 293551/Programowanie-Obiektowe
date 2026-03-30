@@ -1,1 +1,92 @@
+#include <iostream>
 
+using namespace std;
+
+void dodajOsobe(string *tabNazwisk, string nazwisko,string *tabImion, string imie, int *tabIndeks, int indeks)
+{
+    for(int i=0;i<10;i++)
+    {
+        if(tabNazwisk[i]=="")
+        {
+            tabNazwisk[i]=nazwisko;
+            tabImion[i]=imie;
+            tabIndeks[i]=indeks;
+            return;
+        }
+    }
+    
+}
+void ustawObecnosc(string *tabNazwisk, bool *tabObecnosc, string nazwisko, bool obecnosc)
+{
+    for(int i=0;i<10;i++)
+    {
+        if(tabNazwisk[i]!="" && tabNazwisk[i]==nazwisko)
+        {
+            tabObecnosc[i]=obecnosc;
+            return;
+        }
+    }
+    
+}
+void drukujListe(string *tabNazwisk, bool *tabObecnosc,string *tabImion,int *tabIndeks)
+{
+    for(int i=0;i<10;i++)
+    {
+        if(tabNazwisk[i]!="")
+        {
+            cout<<*tabIndeks<<" "<<*tabImion<<" "<<*tabNazwisk<<" "<<*tabObecnosc<<endl;
+        }
+        else break;
+    }
+}
+void edytujOsobe(string *tabNazwisk,)
+{
+
+}
+void usunOsobe(string *tabNazwisk)
+int main()
+{
+    string tabNazwisk[10];
+    bool tabObecnosc[10];
+    string tabImion[10];
+    int tabIndeks[10];
+    int indeks;
+    string nazwisko;
+    string imie;
+    bool obecnosc;
+    int choice;
+    do{
+    cout<<"===Menu==="<<endl;
+    cout<<"1 - Dodaj Osobe"<<endl;
+    cout<<"2- Zmien obecnosc"<<endl;
+    cout<<"3 - Wyswietl Liste"<<endl;
+    cout<<"4 - Wyjscie"<<endl;
+    cin>>choice;
+    
+    switch (choice)
+    {
+    case 1:
+        cout<<"Podaj Nazwisko do dodania"<<endl;
+        cin>>nazwisko;
+        cout<<"Podaj Imie do dodania"<<endl;
+        cin>>imie;
+        cout<<"Podaj Indeks do dodania"<<endl;
+        cin>>indeks;
+        dodajOsobe(tabNazwisk, nazwisko,tabImion,imie,tabIndeks,indeks);
+        break;
+    case 2:
+        cout<<"Podaj nazwisko osoby, ktorej zmienic obecnosc"<<endl;
+        cin>>nazwisko;
+        cout<<"Na jaką obecnosc chcesz zmienic? (0,1)"<<endl;
+        cin>>obecnosc;
+        ustawObecnosc(tabNazwisk,tabObecnosc, nazwisko, obecnosc);
+        break;
+    case 3:
+        drukujListe(tabNazwisk,tabObecnosc,tabImion,tabIndeks);
+        break;
+    default:
+        break;
+    }
+}
+    while(choice!=4);
+}
