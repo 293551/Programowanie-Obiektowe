@@ -3,20 +3,31 @@
 using namespace std;
 
 class Osoba {
-    int indeks ;
-    string imie ;
-    string nazwisko ;
+    public:
+        void dodajOsobe() ;
+        void ustawObecnosc() ;
+        void edytujOsobe() ;
+        void usunOsobe() ;
+        
+    private:
+    
+        int indeks ;
+        string imie ;
+        string nazwisko ;
     
 } ;
 
-void Osoba.setimie(string wartosc){
-    if(wartosc.long(l > 1) && wartosc.long(l < 99)
-    Imie = wartoc;
+/*
+
+void Osobasetimie(string wartosc){
+    if(("wartosc.size" > 1) && ("wartosc.size" < 99))
+    Imie = wartosc;
 } ;
 
-string Osoba.getimie {
+string Osobagetimie {
     
 }
+*/
 
 void dodajOsobe(Osoba *tabOsoba, Osoba Osoba)
 {
@@ -53,11 +64,24 @@ void drukujListe(Osoba *tabOsoba, bool *tabObecnosc, Osoba Osoba)
         else break;
     }
 }
-void edytujOsobe(string *tabNazwisk)
+void edytujOsobe(Osoba *tabOsoba, Osoba Osoba)
 {
-
+    for(int i=0;i<10;i++)
+    {
+        if("tabOsoba[i]" != "" && "tabOsoba[i]" == "Osoba")
+        {
+            tabOsoba[i]=Osoba;
+            return;
+        }
+    }
+    
 }
-void usunOsobe(string *tabNazwisk) ;
+
+void usunOsobe(string *tabNazwisk)
+{
+    
+}
+
 int main()
 {
     Osoba tabOsoba[10];
@@ -66,12 +90,14 @@ int main()
     bool obecnosc;
     int choice;
     int i = 0;
+    Osoba ;
     do{
     cout<<"===Menu==="<<endl;
     cout<<"1 - Dodaj Osobe"<<endl;
     cout<<"2- Zmien obecnosc"<<endl;
     cout<<"3 - Wyswietl Liste"<<endl;
-    cout<<"4 - Wyjscie"<<endl;
+    cout<<"4 - Edytowac Osobe"<<endl;
+    cout<<"5 - Wyjscie"<<endl;
     cin>>choice;
     
     switch (choice)
@@ -95,9 +121,19 @@ int main()
     case 3:
         drukujListe(tabOsoba,tabObecnosc, Osoba);
         break;
+    case 4:
+        cout<<"Podaj nazwisko osoby ktorej bendziesz edytowac"<<endl;
+        cin>>tab.nazwisko;
+        cout<<"Podaj Nazwisko do dodania"<<endl;
+        cin>>tab.nazwisko;
+        cout<<"Podaj Imie do dodania"<<endl;
+        cin>>tab.imie;
+        cout<<"Podaj Indeks do dodania"<<endl;
+        cin>>tab.indeks;
+        edytujOsobe(tabOsoba, Osoba);
     default:
         break;
     }
 }
-    while(choice!=4);
+    while(choice!=5);
 }
