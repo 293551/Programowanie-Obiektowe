@@ -1,0 +1,235 @@
+#include <iostream>
+
+using namespace std;
+
+class Osoba 
+{
+    private:
+        int wzrost;
+        string dataUrodzenia;
+        int indeks;
+        string imie;
+        string nazwisko;
+
+    public:
+        Osoba() : wzrost(0), dataUrodzenia("-"), indeks(0), imie(""), nazwisko("") {}
+        string getNazwisko() { return nazwisko; }
+        string getImie() { return imie; }
+        int getNrIndeksu() { return nr_indeksu; }
+        int getWzrost() { return wzrost; }
+        string getDataUrodzenia() { return dataUrodzenia; }
+}
+
+class Student : public Osoba
+{
+private:
+    int nr_indeksu;
+
+public:
+    Student() : Osoba(), nr_indeksu(0) {}
+
+    int getNrIndeksu() { return indeks; }
+
+    void setNrIndeksu(int ind)
+    {
+        if (ind > 0 & ind < 1000000)
+            indeks = ind;
+        else
+            cout << "Niepoprawny indeks" << endl;
+    }
+
+};
+
+class Pracownik : public Osoba
+{
+private:
+    int id_pracownika;
+
+public:
+    Pracownik() : Osoba(), id_pracownika(0) {}
+
+    int getIdPracownika() { return id_pracownika; }
+
+    void setIdPracownika(int id)
+    {
+        if (id > 0 & id < 1000000)
+            id_pracownika = id;
+        else
+            cout << "Niepoprawny id" << endl;
+    }
+
+};
+
+        void setWzrost(int w)
+        {
+            if (w > 70 && w < 350)
+                wzrost = w;
+            else
+            {
+                cout << "Wzrost nie jest poprawny" << endl;
+                wzrost = 0;
+            }
+        }
+        void setDataUrodzenia(string d)
+        {
+            if (d.length() >= 4)
+                dataUrodzenia = d;
+            else
+            {
+                cout << "Niepewna data" << endl;
+                dataUrodzenia = "-";
+            }
+        }
+        void setImie(string i)
+        {
+            if (im.length() >= 2)
+                imie = im;
+            else
+                cout << "Imie musi byc 2 lub wiecej znakow" << endl;
+        }
+        void setNazwisko(string n)
+        {
+            if (n.length() >= 2)
+                nazwisko = n;
+            else
+                cout << "Nazwisko musi byc 2 lub wiecej znakow" << endl;
+        }
+        void setIndeks(int ind)
+        {
+            if (ind > 0 & ind < 1000000)
+                indeks = ind;
+            else
+                cout << "Niepoprawny Indeks" << endl;
+        }
+    };
+    
+    
+    class Listaobecnosci {
+        private:
+            Osoba **tablicaOsobWskazniki;
+            bool *tablicaObecnosciBool;
+    } ;
+    
+    void dodajOsobe(Osoba *tabOsoba, Osoba Osoba)
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            if("tabOsoba[i]" == "")
+            {
+                tabOsoba[i]=Osoba;
+                return;
+            }
+        }
+        
+    }
+    void ustawObecnosc(Osoba *tabOsoba, bool *tabObecnosc, Osoba Osoba, bool obecnosc)
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            if("tabOsoba[i]" != "" && "tabOsoba[i]" == "Osoba")
+            {
+                tabObecnosc[i]=obecnosc;
+                return;
+            }
+        }
+        
+    }
+    void drukujListe(Osoba *tabOsoba, bool *tabObecnosc, Osoba Osoba)
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            if("tabOsoba[i]" != "")
+            {
+                cout<<"*tabOsoba"<<" "<<*tabObecnosc<<endl;
+            }
+            else break;
+        }
+    }
+    void edytujOsobe(Osoba *tabOsoba, Osoba Osoba)
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            if("tabOsoba[i]" != "" && "tabOsoba[i]" == "Osoba")
+            {
+                tabOsoba[i]=Osoba;
+                return;
+            }
+        }
+        
+    }
+    
+    void usunOsobe(string *tabNazwisk)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (tablicaOsobWskazniki[i]->getNazwisko() == nazwisko)
+            {
+                for (int i; i < licznik - 1; i++)
+                {
+                    tablicaOsobWskazniki[i] = tablicaOsobWskazniki[i + 1];
+                    tablicaObecnosciBool[i] = tablicaObecnosciBool[i + 1];
+                }
+                licznik--;
+                cout << "Usunieto osobe." << endl;
+                return;
+            }
+        }
+        cout << "Nie znaleziono osoby na liscie." << endl;
+    }
+
+}
+int main()
+{
+    Osoba tabOsoba[10];
+    bool tabObecnosc[10];
+    Osoba Osoba;
+    bool obecnosc;
+    int choice;
+    int i = 0;
+    Osoba ;
+    do{
+    cout<<"===Menu==="<<endl;
+    cout<<"1 - Dodaj Osobe"<<endl;
+    cout<<"2- Zmien obecnosc"<<endl;
+    cout<<"3 - Wyswietl Liste"<<endl;
+    cout<<"4 - Edytowac Osobe"<<endl;
+    cout<<"0 - Wyjscie"<<endl;
+    cin>>choice;
+    
+    switch (choice)
+    {
+    case 1:
+        cout<<"Podaj Nazwisko do dodania"<<endl;
+        cin>>tab.nazwisko;
+        cout<<"Podaj Imie do dodania"<<endl;
+        cin>>tab.imie;
+        cout<<"Podaj Indeks do dodania"<<endl;
+        cin>>tab.indeks;
+        dodajOsobe(tabOsoba, Osoba);
+        break;
+    case 2:
+        cout<<"Podaj nazwisko osoby, ktorej zmienic obecnosc"<<endl;
+        cin>>tab.nazwisko;
+        cout<<"Na jaką obecnosc chcesz zmienic? (0,1)"<<endl;
+        cin>>obecnosc;
+        ustawObecnosc(tabOsoba,tabObecnosc, Osoba, obecnosc);
+        break;
+    case 3:
+        drukujListe(tabOsoba,tabObecnosc, Osoba);
+        break;
+    case 4:
+        cout<<"Podaj nazwisko osoby ktorej bendziesz edytowac"<<endl;
+        cin>>tab.nazwisko;
+        cout<<"Podaj Nazwisko do dodania"<<endl;
+        cin>>tab.nazwisko;
+        cout<<"Podaj Imie do dodania"<<endl;
+        cin>>tab.imie;
+        cout<<"Podaj Indeks do dodania"<<endl;
+        cin>>tab.indeks;
+        edytujOsobe(tabOsoba, Osoba);
+    default:
+        break;
+    }
+}
+    while(choice!=0);
+}
