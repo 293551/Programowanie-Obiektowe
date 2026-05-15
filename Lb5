@@ -1,0 +1,118 @@
+#include <iostream>
+
+using namespace std;
+
+class Osoba 
+{
+    private:
+        int wzrost;
+        string dataUrodzenia;
+        int indeks;
+        string imie;
+        string nazwisko;
+
+    public:
+        Osoba() : wzrost(0), dataUrodzenia("-"), indeks(0), imie(""), nazwisko("") {}
+        string getNazwisko() { return nazwisko; }
+        string getImie() { return imie; }
+        int getNrIndeksu() { return indeks; }
+        int getWzrost() { return wzrost; }
+        string getDataUrodzenia() { return dataUrodzenia; }
+        
+    virtual:
+        drukuj() {return tabOsoba; }
+};
+
+class Student : public Osoba
+{
+private:
+    int indeks;
+
+public:
+    Student() : Osoba(), indeks(0) {}
+
+    int getNrIndeksu() { return indeks; }
+
+    void setNrIndeksu(int ind)
+    {
+        if (ind > 0 & ind < 1000000)
+            indeks = ind;
+        else
+            cout << "Niepoprawny indeks" << endl;
+    }
+
+};
+
+class Pracownik : public Osoba
+{
+private:
+    int id_pracownika;
+
+public:
+    Pracownik() : Osoba(), id_pracownika(0) {}
+
+    int getIdPracownika() { return id_pracownika; }
+
+    void setIdPracownika(int id)
+    {
+        if (id > 0 & id < 1000000)
+            id_pracownika = id;
+        else
+            cout << "Niepoprawny id" << endl;
+    }
+
+};
+
+        void setWzrost(int w, int wzrost)
+        {
+            if (w > 70 && w < 350)
+                wzrost = w;
+            else
+            {
+                cout << "Wzrost nie jest poprawny" << endl;
+                wzrost = 0;
+            }
+        }
+        void setDataUrodzenia(string d, string dataUrodzenia)
+        {
+            if (d.length() >= 4)
+                dataUrodzenia = d;
+            else
+            {
+                cout << "Niepewna data" << endl;
+                dataUrodzenia = "-";
+            }
+        }
+        void setImie(string im, string imie)
+        {
+            if (im.length() >= 2)
+                imie = im;
+            else
+                cout << "Imie musi byc 2 lub wiecej znakow" << endl;
+        }
+        void setNazwisko(string n, string nazwisko)
+        {
+            if (n.length() >= 2)
+                nazwisko = n;
+            else
+                cout << "Nazwisko musi byc 2 lub wiecej znakow" << endl;
+        }
+        void setIndeks(int ind, int indeks)
+        {
+            if (ind > 0 & ind < 1000000)
+                indeks = ind;
+            else
+                cout << "Niepoprawny Indeks" << endl;
+        }
+        void drukuj(Osoba *tabOsoba, Osoba Osoba, int i);
+            for (int i = 0; i < 10; i++)
+            {
+                if("tabOsoba[i]" != "")
+                {
+                    cout<<"*tabOsoba"<<" "<<*tabObecnosc<<endl;
+                }
+                else break;
+            }
+    }
+    ((Student*)tabOsoba[1])drukuj
+}
